@@ -9,6 +9,7 @@ import {
   verticalListSortingStrategy
 } from "@dnd-kit/sortable";
 import { SortableItem } from './SortableItem';
+import AddOutline from './AddOutline';
 
 function App() {
   const [outlines, setOutlines ] = useState([
@@ -53,7 +54,7 @@ function App() {
             {/* We need components that use the useSortable hook */}
             {outlines.map(outline => <SortableItem key={outline} id={outline}/>)}
           </SortableContext>
-          <button className="text-purple-600 border border-purple-600 rounded-lg text-lg py-2 mt-4">+ Add Outline</button>
+          <AddOutline outlines={outlines} setOutlines={setOutlines} />
         </div>
       </div>
     </DndContext>
